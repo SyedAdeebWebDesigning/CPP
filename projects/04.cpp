@@ -3,28 +3,42 @@
 #include <iostream>
 using namespace std;
 
-class Inline {
+class Inline
+{
     int num;
-    public:
 
-    void getData() {
+public:
+    void setData()
+    {
         cout << "Enter num: ";
         cin >> num;
     }
 
-    inline float square() {
+    void getData()
+    {
+        cout << "Square of number: " << square() << endl;
+        cout << "Cube of number: " << cube() << endl;
+    }
+
+    Inline()
+    {
+        setData();
+        getData();
+    }
+
+    inline float square()
+    {
         return num * num;
     }
 
-    inline float cube() {
+    inline float cube()
+    {
         return num * num * num;
     }
 };
 
-int main() {
-    Inline obj; 
-    obj.getData();
-    cout << "Square of number: " << obj.square() << endl;
-    cout << "Cube of number: " << obj.cube() << endl;
+int main()
+{
+    Inline obj;
     return 0;
 }

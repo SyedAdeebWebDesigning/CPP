@@ -1,20 +1,44 @@
+// Inline Functions
+
 #include <iostream>
 using namespace std;
 
-class Inline {
+class Inline
+{
+    int num;
+
 public:
-    inline float square(float x) {
-        return x * x;
+    void setData()
+    {
+        cout << "Enter num: ";
+        cin >> num;
     }
 
-    inline float cube(float x) {
-        return x * x * x;
+    void getData()
+    {
+        cout << "Square of number: " << square() << endl;
+        cout << "Cube of number: " << cube() << endl;
+    }
+
+    Inline()
+    {
+        setData();
+        getData();
+    }
+
+    inline float square()
+    {
+        return num * num;
+    }
+
+    inline float cube()
+    {
+        return num * num * num;
     }
 };
 
-int main() {
-    Inline obj; 
-    cout << "Square of number: " << obj.square(4.0) << endl;
-    cout << "Cube of number: " << obj.cube(2.0) << endl;
+int main()
+{
+    Inline obj;
     return 0;
 }
